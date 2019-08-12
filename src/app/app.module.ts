@@ -1,12 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { ImgSliderModule } from './img-slider/img-slider.module';
-import { ImageGalleryModule } from './image-gallexy/image-gallexy.component';
-import { ContentProjectionModule } from './content-projection/content-projection.module';
-import { AuthService } from './auth.service';
-import { GalleryConfig } from './image-gallexy/token';
+import {AppComponent} from './app.component';
+import {ImgSliderModule} from './img-slider/img-slider.module';
+import {ContentProjectionModule} from './content-projection/content-projection.module';
+import {AuthService} from './auth.service';
+import {GalleryConfig} from './image-gallexy/token';
 
 @NgModule({
   declarations: [
@@ -15,7 +14,6 @@ import { GalleryConfig } from './image-gallexy/token';
   imports: [
     BrowserModule,
     ImgSliderModule,
-    ImageGalleryModule,
     ContentProjectionModule
   ],
   // providers: [AuthService],
@@ -25,7 +23,7 @@ import { GalleryConfig } from './image-gallexy/token';
     {provide: 'API_URL', useExisting: 'API_ENDPOINT'},
     {
       provide: 'some-token',
-      useFactory: function() {
+      useFactory() {
         return Math.random();
       }
     },
@@ -35,4 +33,5 @@ import { GalleryConfig } from './image-gallexy/token';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

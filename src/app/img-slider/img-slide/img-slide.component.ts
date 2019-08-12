@@ -6,7 +6,7 @@ import {Component, OnInit, ViewChild, TemplateRef} from '@angular/core';
   styleUrls: ['./img-slide.component.scss']
 })
 export class ImgSlideComponent implements OnInit {
-  @ViewChild('tmpl') template: TemplateRef<any>;
+  @ViewChild('tmpl', {static: false}) template: TemplateRef<any>;
 
   constructor() {
   }
